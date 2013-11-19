@@ -1,0 +1,36 @@
+#!/usr/bin/env perl
+
+=head1 DESCRIPTION
+
+forward irc comment to elasticsearch
+
+=head1 SYNOPSIS
+
+    % irc-forwader-elasticsearch --Elasticsearch-nodes=x.x.x.x,y.y.y.y --irc-host=localhost --channels=foo,bar
+
+=cut
+
+use strict;
+use warnings;
+use IRC::Bot::Forwarder::Elasticsearch;
+
+use Getopt::Long qw( :config posix_default no_ignore_case bundling auto_help );
+use Pod::Usage   qw( pod2usage );
+
+GetOptions(
+    \my %opt,
+    qw(
+        irc-host=s
+        elasticsearch-nodes=s
+        nickname=s
+        channels=s
+    )
+);
+$opt{irc_host}            = delete $opt{'irc-host'}            || 'localhost';
+$opt{elasticsearch_nodes} = delete $opt{'elasticsearch-nodes'} || ['localhost:9200'];
+$opt{channels}            = [map { $_ =~ /#.+/ ? $_ : "#$_" } grep { $_ } split( ',', $opt{channels})];
+
+IRC::Bot::Forwarder::Elasticsearch->new(%opt)->run;
+
+
+__END__

@@ -1,5 +1,5 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "fowarder from IRC to Elasticsearch.",
    "author" : [
       "SUZUKI Masashi <m15.suzuki.masashi@gmail.com>"
    ],
@@ -45,7 +45,9 @@
          "requires" : {
             "AnySan" : "0",
             "Elasticsearch" : "0",
+            "Getopt::Long" : "0",
             "Moo" : "0",
+            "Pod::Usage" : "0",
             "perl" : "5.008005"
          }
       },
@@ -56,5 +58,16 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/masasuzu/p5-IRC-Bot-Forwarder-Elasticsearch/issues"
+      },
+      "homepage" : "https://github.com/masasuzu/p5-IRC-Bot-Forwarder-Elasticsearch",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/masasuzu/p5-IRC-Bot-Forwarder-Elasticsearch.git",
+         "web" : "https://github.com/masasuzu/p5-IRC-Bot-Forwarder-Elasticsearch"
+      }
+   },
    "version" : "0.01"
 }

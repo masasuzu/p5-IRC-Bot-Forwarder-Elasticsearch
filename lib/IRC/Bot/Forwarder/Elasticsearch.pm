@@ -79,15 +79,22 @@ __END__
 
 =head1 NAME
 
-IRC::Bot::Forwarder::Elasticsearch - It's new $module
+IRC::Bot::Forwarder::Elasticsearch - fowarder from IRC to Elasticsearch.
 
 =head1 SYNOPSIS
 
     use IRC::Bot::Forwarder::Elasticsearch;
 
+    IRC::Bot::Forwarder::Elasticsearch->new(
+        irc_host            => 'localhost',
+        elasticsearch_nodes => ['localhost:9200'],
+        channels            => ['#test'],
+        nickname            => 'logger',
+    );
+
 =head1 DESCRIPTION
 
-IRC::Bot::Forwarder::Elasticsearch is ...
+IRC::Bot::Forwarder::Elasticsearch is fowarder from IRC to Elasticsearch.
 
 =head1 LICENSE
 

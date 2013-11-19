@@ -7,3 +7,6 @@ on 'test' => sub {
 requires 'AnySan';
 requires 'Elasticsearch';
 requires 'Moo';
+requires 'Getopt::Long';
+requires 'Pod::Usage';
+
